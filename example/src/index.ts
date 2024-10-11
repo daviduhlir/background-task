@@ -8,7 +8,15 @@ const test = new BackgroundTask({
   return true
 })
 
+
+const test2 = new BackgroundTask(async (context) => {
+  context.breakPoint()
+  return 'Hello world'
+}, true)
+
+
 ;(async function () {
   test.start()
-  console.log(await test.await())
+  console.log('Test1', await test.await())
+  console.log('Test2', await test2.await())
 })()
