@@ -3,7 +3,7 @@ import { Awaiter } from './Awaiter'
 export type EventHandler = (event: any) => void
 export type EventHandlersCollection = { [name: string]: EventHandler }
 
-export interface BackgroundTaskContext<K> {
+export interface BackgroundTaskContext<K extends EventHandlersCollection> {
   breakPoint: () => void
   events: K
 }
