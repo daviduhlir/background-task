@@ -19,9 +19,9 @@ export class Awaiter<T = any> {
   /**
    * Wait it until it will be resolved.
    *
-   * eg. await waiter.wait()
+   * eg. await waiter.await()
    */
-  async wait(): Promise<T> {
+  async await(): Promise<T> {
     if (this.finished) {
       if (this.error) {
         throw this.error
